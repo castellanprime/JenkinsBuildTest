@@ -8,7 +8,9 @@ pipeline {
     }
     stage('build') {
       steps {
-        sh "mvn clean package"
+      	sh "cd /JenkinsBuildTest/"
+        sh "mvn clean install"
+        sh "mvn package"
       }
     }
     stage('archive') {
