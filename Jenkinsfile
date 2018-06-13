@@ -3,13 +3,12 @@ pipeline {
   stages {
     stage('download') {
       steps {
-        sh '''git "https://github.com/castellanprime/JenkinsBuildTest.git"
-'''
+        git "https://github.com/castellanprime/JenkinsBuildTest.git"
       }
     }
     stage('build') {
       steps {
-        sh 'sh "mvn clean package"'
+        sh "mvn clean package"
       }
     }
     stage('archive') {
